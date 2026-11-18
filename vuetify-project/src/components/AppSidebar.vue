@@ -24,9 +24,9 @@ defineEmits(['update:modelValue'])
 <style scoped>
 .portfolio-sidebar {
     position: fixed !important;
-    top: 0 !important;
+    top: 64px !important;
     bottom: 0 !important;
-    height: 100vh !important;
+    height: calc(100vh - 64px) !important;
     border-right: 1px solid #c5c3ba;
     background: #e9e7df;
     color: #242621;
