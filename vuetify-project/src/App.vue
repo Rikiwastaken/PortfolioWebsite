@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      hello
+      <ItchGames />
     </v-main>
     <v-btn class="ma-2" icon="mdi-theme-light-dark" location="top right" position="absolute"
       @click="$vuetify.theme.cycle()" />
@@ -9,5 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue'
+// @ts-ignore: Vue SFC module declaration is not available in the current TypeScript configuration.
+import ItchGames from '@/components/ItchGames.vue'
 </script>
