@@ -6,22 +6,6 @@
     </div>
 
     <v-container fluid class="game-page py-10">
-        <!-- Header -->
-        <v-row class="mb-8" justify="center">
-            <v-col cols="12" md="10" lg="8" class="text-center">
-                <p class="text-overline text-primary mb-2">
-                    Games
-                </p>
-
-                <h1 class="text-h3 font-weight-bold mb-4">
-                    My itch.io games
-                </h1>
-
-                <p class="text-body-1 text-medium-emphasis">
-                    Explore my games and play them directly from itch.io.
-                </p>
-            </v-col>
-        </v-row>
 
         <!-- Game embeds -->
         <v-row justify="center">
