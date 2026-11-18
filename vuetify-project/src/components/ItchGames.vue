@@ -32,6 +32,7 @@
                 <div class="details-copy">
                     <h2>{{ selectedGame.title }}</h2>
                     <p>{{ selectedGame.summary }}</p>
+                    <p><strong>Contributions:</strong> {{ selectedGame.partIdid }}</p>
                     <a :href="selectedGame.url" target="_blank" rel="noopener noreferrer">
                         View on itch.io
                         <v-icon icon="mdi-arrow-up-right" size="16"></v-icon>
@@ -51,6 +52,7 @@ const games = [
         title: 'GyroCore',
         url: 'https://rikiwastaken.itch.io/gyrocore',
         image: ['/images/games/GyroCore.png'],
+        partIdid: 'Code, Level Design, Art',
         summary: 'GyroCore is a horror game in which the player controls the movements of a sphere by tilting the whole map. They must gather Energy Cores while avoiding deadly machines with each their own unique movement patterns.'
     },
     {
@@ -58,6 +60,7 @@ const games = [
         title: 'Megarun',
         url: 'https://rikiwastaken.itch.io/megarun',
         image: ['/images/games/Megarun.png'],
+        partIdid: 'Code, Art',
         summary: 'Megarun is a speedrun puzzle platformer in which the player must shoot targets as fast as possible. To do so, they can stop time and reorganize the level. Each level can be completed either as fast as possible, with as few permutations as possible, or with as few timestops as possible.\nGame made for the TeleGameJam2026'
     },
     {
@@ -65,6 +68,7 @@ const games = [
         title: 'Survive the BackdoomS',
         url: 'https://rikiwastaken.itch.io/survive-the-backdooms',
         image: ['/images/games/SurviveTheBackdooms.png'],
+        partIdid: 'Code, Level Design',
         summary: 'Survive the BackdoomS is a Survivor-like first person shooter in which the player must defeat waves of enemies, which grants him random bonuses. The player can also find and use different weapons, and gather an array of powerups to help them survive longer.\nGame made for the Brackeys Game Jam 2026.1'
     },
     {
@@ -72,6 +76,7 @@ const games = [
         title: 'Beneath The Mask',
         url: 'https://rikiwastaken.itch.io/beneath-the-mask',
         image: ['/images/games/BeneathTheMask.png'],
+        partIdid: 'Code, Level Design',
         summary: 'Beneath The Mask is a horror game in which the player explores a house while avoiding a monster that is hunting them. The player must gather 5 clues in order to unmask the monster.\nThe player may crouch and turn off their flashlight to avoid being detected, but the monster will still be able to hear them.\nGame made for Global Game Jam 2026'
     },
     {
@@ -79,6 +84,7 @@ const games = [
         title: '3Dash',
         url: 'https://rikiwastaken.itch.io/3dash',
         image: ['/images/games/3Dash.png'],
+        partIdid: 'Code, Level Design, Art',
         summary: '3Dash is a runner game in which the player must avoid obstacles by dashing to one of the corners of the screen. The player can also dash through obstacles to destroy them, but this will cost them some health. The player can also gather powerups to help them survive longer.'
     },
     {
@@ -86,6 +92,7 @@ const games = [
         title: 'Sisyphus Clicker',
         url: 'https://rikiwastaken.itch.io/sisyphus-clicker',
         image: ['/images/games/SisyphusClicker.png'],
+        partIdid: 'Code, Level Design, Art',
         summary: 'Sisyphus Clicker is a parodic clicker game in which the player must to help Sisyphus push a boulder up a hill. The player can gather different powerups to help them push the boulder faster, and fight in the colyseum to earn more powerups, and ultimately defeat Zeus.\nGame made for the Game Jam Connexions 2025.'
     },
     {
@@ -93,6 +100,7 @@ const games = [
         title: 'Eldon',
         url: 'https://rikiwastaken.itch.io/eldon',
         image: ['/images/games/Eldon.png'],
+        partIdid: '"Code", Level Design',
         summary: 'Eldon is a demo for a dark RPG maker game made when I started learning game development.'
     }
 ]

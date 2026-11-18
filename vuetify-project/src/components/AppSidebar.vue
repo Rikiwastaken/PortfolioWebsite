@@ -1,6 +1,6 @@
 <template>
-    <v-navigation-drawer :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)"
-        permanent class="portfolio-sidebar">
+    <v-navigation-drawer :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)" permanent
+        class="portfolio-sidebar">
         <v-list nav>
             <v-list-item prepend-icon="mdi-home" title="Home" to="/" />
 
@@ -8,7 +8,7 @@
 
             <v-list-item prepend-icon="mdi-sword-cross" title="Skypiercer" to="/skypiercer" />
 
-            <v-list-item prepend-icon="mdi-account" title="About" to="/about" />
+            <v-list-item prepend-icon="mdi-account" title="Research" to="/research" />
         </v-list>
     </v-navigation-drawer>
 </template>

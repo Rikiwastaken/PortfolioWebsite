@@ -16,6 +16,10 @@ const routes = [
             {
                 path: 'skypiercer',
                 component: () => import('@/components/Skypiercer.vue' as string)
+            },
+            {
+                path: 'research',
+                component: () => import('@/components/Research.vue' as string)
             }
         ]
     }
