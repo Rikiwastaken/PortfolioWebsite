@@ -1,5 +1,6 @@
 <template>
-    <v-navigation-drawer :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)" permanent>
+    <v-navigation-drawer :model-value="modelValue" @update:model-value="$emit('update:modelValue', $event)"
+        permanent class="portfolio-sidebar">
         <v-list nav>
             <v-list-item prepend-icon="mdi-home" title="Home" to="/" />
 
@@ -19,3 +20,20 @@ defineProps({
 
 defineEmits(['update:modelValue'])
 </script>
+
+<style scoped>
+.portfolio-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100vh !important;
+    border-right: 1px solid #c5c3ba;
+    background: #e9e7df;
+    color: #242621;
+    overflow-y: auto;
+}
+
+.portfolio-sidebar :deep(.v-list-item--active) {
+    color: #ae4f35;
+}
+</style>

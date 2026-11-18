@@ -3,11 +3,10 @@
         <v-container class="page-content py-8 py-md-12">
             <header class="page-header">
                 <div>
-                    <p class="kicker">PERSONAL PROJECT</p>
+                    <p class="kicker">MAIN PROJECT</p>
                     <h1>Skypiercer</h1>
                     <p class="intro">
-                        A turn-based tactical RPG I am making in my spare time.
-                        It takes inspiration from Fire Emblem and the atmosphere of NieR.
+                        A turn-based tactical RPG inspired by the Fire Emblem series.
                     </p>
                 </div>
                 <v-btn class="github-button" href="https://github.com/Rikiwastaken/SkypiercerFE" target="_blank"
@@ -28,16 +27,13 @@
 
             <section class="about-layout">
                 <div>
-                    <h2>What it is about</h2>
+                    <h2>Story</h2>
                     <p>
-                        Zack Farron and his allies leave their isolated village after a local incident
-                        turns into something much bigger. They travel through a world still dealing with
-                        an apocalyptic cataclysm while Caelum works towards taking it over.
-                    </p>
-                    <p>
-                        I am building the game around deliberate, turn-by-turn decisions. Units have
-                        different growth rates, weapons change how they develop, and the map itself can
-                        change how a fight plays out.
+                        Follow Zack Farron and his allies as they travel the world in the midst of a terrifying war.
+                        What begins as
+                        a local incident escalates into a journey beyond their isolated village to stop Caelum, a force
+                        plotting to
+                        take over the world.
                     </p>
                 </div>
 
@@ -53,11 +49,24 @@
                 </aside>
             </section>
 
+            <section class="Gameplay">
+                <h2>Gameplay</h2>
+                <div class="gameplay-system-list">
+                    <article v-for="system in GamePlaySystems" :key="system.title" class="system">
+                        <h3>{{ system.title }}</h3>
+                        <img :src="system.icon" alt="" class="system-icon">
+                        <div>
+                            <p>{{ system.description }}</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
             <section class="systems">
-                <h2>Some of the systems</h2>
+                <h2>Core Systems</h2>
                 <div class="system-list">
                     <article v-for="system in systems" :key="system.title" class="system">
-                        <v-icon :icon="system.icon" size="24"></v-icon>
+                        <img :src="system.icon" alt="" class="system-icon">
                         <div>
                             <h3>{{ system.title }}</h3>
                             <p>{{ system.description }}</p>
@@ -67,10 +76,19 @@
             </section>
 
             <section class="closing-note">
-                <h2>This is still a work in progress.</h2>
+                <h2>Credits</h2>
                 <p>
-                    The game design, models and code are all being made by me. The frontend repository
-                    is public if you want to look at how it is coming together.
+                    Game design, concept, 3D Models and code by me without AI.
+                </p>
+                <p>
+                    Music by <a href="https://maou.audio/category/bgm/"> Maoudamashii </a> and<a
+                        href="https://youfulca.com/en/music_assets/"> Youfulca </a>
+                </p>
+                <p>
+                    Icons by xoraki_rkd
+                </p>
+                <p>
+                    Placeholder character images made with <a href="https://charat.me/en/"> Charat.me </a>.
                 </p>
                 <v-btn href="https://github.com/Rikiwastaken/SkypiercerFE" target="_blank" rel="noopener noreferrer"
                     variant="text" prepend-icon="mdi-github">
@@ -83,32 +101,55 @@
 
 <script setup>
 const stats = [
-    { label: 'Story maps', value: '18' },
+    { label: 'Story maps', value: '19' },
     { label: 'Side story maps', value: '4' },
-    { label: 'Characters', value: '17' },
+    { label: 'Characters', value: '18' },
     { label: 'Skills', value: '119' }
 ]
 
 const systems = [
     {
-        icon: 'mdi-sword-cross',
+        icon: '/images/Icons/SwordIcon.png',
         title: 'Blades',
-        description: 'There are eight blade types. Using one changes a character’s stats, growth rates and durability.'
+        description: 'Each character can summon up to 3 different "Blades" from 8 different types. Each Blade has its own unique skillset and can be upgraded to become more powerful.\n Swords increase the user\'s Speed while staves can be used to heal, and spears are more precise. Each blades also influences the level ups of the characters.'
     },
     {
-        icon: 'mdi-target',
+        icon: '/images/Icons/TelekinesisIcon.png',
         title: 'Telekinesis',
-        description: 'Characters can trade their normal damage calculation for a longer-range, psyche-based attack.'
+        description: 'Characters can either attack normally, or use their telekinetic powers to attack from a distance, albeit with a reduced damage and different stat scaling (Strength and Defense are replaced by Psyche and Resistance).'
     },
     {
-        icon: 'mdi-account-group',
+        icon: '/images/Icons/PowerIcon.png',
         title: 'Battalions and examode',
-        description: 'Units can join a protagonist’s battalion. Later, the protagonist can activate a temporary powered-up state.'
+        description: "Characters can be assigned to the battallion of of one the three protagonist once they are unlocked. Being assigned to a battallion gives passive bonuses to both the unit and the leader.\n\nAfter reaching a certain point in the story or complaining certain side missions, protagonists gain access to examode, which is a temporary overpowered state. It\'s effects differ for each protagonist, but they always empower both them and the units in thei battallion.The examode gauge fills up when the unit or their subordinates take action."
     },
     {
-        icon: 'mdi-weather-partly-cloudy',
+        icon: '/images/Icons/CopyIcon.png',
         title: 'Map effects',
-        description: 'Terrain, elevation and weather affect movement, accuracy and the way skills work during a mission.'
+        description: 'Terrain, elevation and weather can have varying effects on the units. For example, a Forest Tile increases the evasion of units standing on it, while a Desert Tile damages them each turn.'
+    }
+]
+
+const GamePlaySystems = [
+    {
+        icon: '/images/SkypiercerScreens/CharacterImage.png',
+        title: 'Characters',
+        description: 'Each character has their own stat and growth rates (which corresponds to the odds of a stat increasing when levelling up). Thay also all have their own passive skill, which gives them stat boosts or new abilities. This skill levels up at certain character level thresholds.'
+    },
+    {
+        icon: '/images/SkypiercerScreens/TelekImage.png',
+        title: 'Telekinesis',
+        description: 'Characters can either attack normally, or use their telekinetic powers to attack from a distance, albeit with a reduced damage and different stat scaling (Strength and Defense are replaced by Psyche and Resistance).'
+    },
+    {
+        icon: '/images/SkypiercerScreens/BattallionImage.png',
+        title: 'Battalions and examode',
+        description: "Characters can be assigned to the battallion of of one the three protagonist once they are unlocked. Being assigned to a battallion gives passive bonuses to both the unit and the leader.\n\nAfter reaching a certain point in the story or complaining certain side missions, protagonists gain access to examode, which is a temporary overpowered state. It\'s effects differ for each protagonist, but they always empower both them and the units in thei battallion.The examode gauge fills up when the unit or their subordinates take action."
+    },
+    {
+        icon: '/images/SkypiercerScreens/EnvImage.png',
+        title: 'Map effects',
+        description: 'Terrain, elevation and weather can have varying effects on the units. For example, a Forest Tile increases the evasion of units standing on it, while a Desert Tile damages them each turn.'
     }
 ]
 </script>
@@ -265,14 +306,37 @@ dd {
     gap: 2rem 4rem;
 }
 
+.gameplay-system-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 3rem;
+}
+
 .system {
     display: grid;
     grid-template-columns: 2rem 1fr;
     gap: 1rem;
 }
 
-.system .v-icon {
-    color: #ae4f35;
+.Gameplay .system {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.system-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.Gameplay .system-icon {
+    width: 100%;
+    height: clamp(280px, 45vw, 520px);
+    padding: 1rem;
+    border: 1px solid #c5c3ba;
+    background: #f2f0e9;
+    object-fit: contain;
 }
 
 .system h3 {
@@ -313,7 +377,8 @@ dd {
     }
 
     .about-layout,
-    .system-list {
+    .system-list,
+    .gameplay-system-list {
         grid-template-columns: 1fr;
     }
 
